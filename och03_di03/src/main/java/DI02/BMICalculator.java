@@ -5,7 +5,7 @@ public class BMICalculator {
 	private double lowWeight;
 	private double normal;
 	private double overWeight;	// 과체중
-	private double obesity;		// 비만
+	private double obesity;		// 비만  ()
 	
 	private void bmicalculation(double weight, double height) {
 		
