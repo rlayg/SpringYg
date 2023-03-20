@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="mb3" class="sam03.MessageBeanImpl">
+	<!-- 생성자방식으로 주입 --> <!-- EX3의 ClassPath 있어서 여기 리소스 만든거 -->
+		<constructor-arg><value>이윤상</value></constructor-arg>
+		<constructor-arg value="잘 부탁해.."/>
+	</bean>
+
+</beans>
