@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class FileOutputter implements Outputter {
 
-		private String fileName;
+	private String fileName;
 	
 	public void setFileName(String fileName) {
 			this.fileName = fileName;

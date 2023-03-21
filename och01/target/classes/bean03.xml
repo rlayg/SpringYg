@@ -6,7 +6,7 @@
 	
 	<bean id="mb3" class="sam03.MessageBeanImpl">
 	<!-- 생성자방식으로 주입 --> <!-- EX3의 ClassPath 있어서 여기 리소스 만든거 -->
-		<constructor-arg><value>이윤상</value></constructor-arg>
+		<constructor-arg><value>나까무라</value></constructor-arg>
 		<constructor-arg value="잘 부탁해.."/>
 	</bean>
 

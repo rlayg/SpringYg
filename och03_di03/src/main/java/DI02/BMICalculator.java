@@ -2,12 +2,12 @@ package DI02;
 
 public class BMICalculator {
 	// DI 입력 예정
-	private double lowWeight;
-	private double normal;
+	private double lowWeight;	// 저체중
+	private double normal;		// 정상
 	private double overWeight;	// 과체중
 	private double obesity;		// 비만  ()
 	
-	private void bmicalculation(double weight, double height) {
+	public void bmicalculation(double weight, double height) {
 		
 		double h = height * 0.01;
 		double result = weight / (h*h);

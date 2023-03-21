@@ -2,6 +2,11 @@ package sam06;
 
 public class VehicleImpl implements Vehicle {
 	
+	
+//	bean06.xml에서 생성자는 constructor-arg해서 value로, 게터세터는 property로 하면 될듯
+//	생성자로 name있고, setter로도 name 있어
+//	xml에서 생성자에 name 설정 했으면 setter에 설정 안해도 돼, 근데 수정하려면 setter에 설정한다
+	
 	private String name;
 	private String rider;
 	private int    speed;
@@ -26,9 +31,5 @@ public class VehicleImpl implements Vehicle {
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	
-	
-	
-	
 
 }
