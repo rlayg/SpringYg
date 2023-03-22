@@ -12,7 +12,7 @@ public class MainClass05 {
 		AbstractApplicationContext ac = new GenericXmlApplicationContext(configLocation);
 		CollectionBean collectionBean = ac.getBean("collectionBean", CollectionBean.class);
 		Map<String, String> addressList = collectionBean.getAddressList();
-		System.out.println("홍길동 주소 : " + addressList.get("산골"));
+		System.out.println("홍길동 주소 : " + addressList.get("산골")); // get("산골") 이라는 key를 얻는거
 		System.out.println("산골 주소 : " + addressList.get("동굴"));
 		
 	}

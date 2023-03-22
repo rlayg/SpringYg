@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+	
+	<!-- 횡단 관심사. crosscutting Concern-->
+	<bean id="LogAop" class="aop1.LogAop"></bean>
+	<!-- 2개 엮어주는게 aop:config 핵심관심사와 횡단 엮어줌 -->
+	<aop:config>
+		<aop:aspect id="logger1" ref="LogAop">
+			<aop:pointcut expression="within(aop1.*)" id="pointcut1"/>  <!-- (aop1.S*)하면 aop.1중에 Student만, (aop1.*)는 전체 -->
+			<aop:around method="loggerAop" 			  pointcut-ref="pointcut1"/>
+		</aop:aspect>
+	</aop:config>
+
+	<!-- 핵심 관심사.  주요 비지니스 업무라는 뜻-->
+	<bean id="student" class="aop1.Student">
+		<property name="name" value="연개소문"/>
+		<property name="age" value="50"/>
+		<property name="gradeNum" value="3"/>
+		<property name="classNum" value="5"/>
+	</bean>
+	
+	<bean id="worker" class="aop1.Worker">
+		<property name="name" value="이순신"/>
+		<property name="age" value="35"/>
+		<property name="job" value="삼도수군통제사"/>
+	</bean>
+
+</beans>
