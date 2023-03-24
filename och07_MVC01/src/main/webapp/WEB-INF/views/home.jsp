@@ -1,5 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <html>
 <head>
 	<title>Home</title>
@@ -11,5 +14,6 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 <P>  We Parameter ${kkk}. </P>
+<P>  <img alt="반짝" src="resources/img/hot.gif"> </P>
 </body>
 </html>

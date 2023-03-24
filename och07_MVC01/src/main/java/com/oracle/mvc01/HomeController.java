@@ -35,7 +35,7 @@ public class HomeController {
 		model.addAttribute("kkk", "we Parameter" );
 		// ViewResolver
 		// /WEB-INF/views/ + home + .jsp
-		// prefix : 선행자 , suffix : 후행자
+		// prefix : 선행자 , suffix : 후행자 -> 선행자 + home + 후행자
 		return "home";
 	}
 	@RequestMapping(value = "/hr", method = RequestMethod.GET)

@@ -25,7 +25,7 @@ public class LogAop {
 			
 		}
 	
-	
+//	Around하나쓰면 밑에거 안써도 돼 그냥 코드 보여주기위해 한거
 	public void beforAdvice() {
 		System.out.println("beforAdvice()");
 	}
