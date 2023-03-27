@@ -22,8 +22,8 @@
 				<td>${mvc_board.bId}</td>
 				<td>${mvc_board.bName}</td>
 				<td>
-					<c:forEach begin="1" end="${mvc_board.bIndent}">-</c:forEach>
-					<a href="content_view$bId=${mvc_board.bId}">
+					<c:forEach begin="1" end="${mvc_board.bIndent}">-</c:forEach>	<!-- -는 마이너스, 빼기가 아니라 게시판에 댓글 대댓글 이런거에 짝대기 붙는거 -, -- 이런식 -->
+					<a href="content_view?bId=${mvc_board.bId}">
 						${mvc_board.bTitle}
 					</a>
 				</td>
