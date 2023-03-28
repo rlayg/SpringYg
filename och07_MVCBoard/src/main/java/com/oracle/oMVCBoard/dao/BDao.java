@@ -166,6 +166,32 @@ public class BDao {
 	}
 
 	private void upHit(String strId) {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			String query = "update mvc_board set bHit = bHit + 1 where bId = ?";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, strId);
+			
+			int rn = preparedStatement.executeUpdate();
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}	
+		
+		
 		// 바로 위 public BDto contentView 안의 upHit사용. 이 안에서만 쓸거기에 private
 		
 		
@@ -367,7 +393,7 @@ public class BDao {
 			pstmt.setString(3, bContent);
 			pstmt.setInt(4, Integer.parseInt(bGroup));
 			pstmt.setInt(5, Integer.parseInt(bStep) + 1);
-			pstmt.setInt(6, Integer.parseInt(bStep) + 1);
+			pstmt.setInt(6, Integer.parseInt(bIndent) + 1);			// och16과 같은 로직
 			
 			int rn = pstmt.executeUpdate();
 			if (rn > 0) {
@@ -430,6 +456,48 @@ public class BDao {
 			} catch (Exception e2) {
 				System.out.println("e2.getMessage() --> " + e2.getMessage());
 			}
+		}
+		
+	}
+
+	public void delete(String bId) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		System.out.println("BDao delete start...");	
+		
+		String sql = "delete from mvc_board where bId = ?"; 
+
+		System.out.println("sql --> " + sql);
+		
+		try {
+			
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bId);
+			int rn = pstmt.executeUpdate();
+			if (rn > 0) {
+		        System.out.println("delete 성공");
+		    } else {
+		        System.out.println("delete 실패");
+		    }
+			
+		} catch (Exception e) {
+			System.out.println("delete dataSource --> " + e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) {
+					pstmt.close();
+				}
+				if(conn != null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+				System.out.println("e2.getMessage() --> " + e2.getMessage());
+			}
+			
 		}
 		
 	}	

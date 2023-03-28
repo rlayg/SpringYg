@@ -6,6 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	body {	font-family: 굴림체; text-align: center;	}
+	table { border: 1px solid pink; width: 100%; 
+	         }
+	tr { height: 30px; background: yellow; }
+	/* th {	background: #C9BFED;	} */
+	th {	background: #b9b973;	}
+	td {	background: #f9f3b3;	}
+</style>
 </head>
 <body>
 	<h1>게시판</h1>
